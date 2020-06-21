@@ -1,16 +1,17 @@
-const startingMinutes = 15;
-let time = startingMinutes * 60;
+var timeleft = 15;
 
-const countdownEl = document.getElementById('timer');
+function sample() {
+    var downloadTimer = setInterval(function
+        function1() {
+        document.getElementById("countdown").innerHTML = timeleft + "&nbsp" + "seconds remaining";
 
-setInterval(updateCountdown, 1000);
+        timeleft -= 1;
+        if (timeleft <= 0) {
+            clearInterval(downloadTimer);
 
-function updateCountdown() {
-    const minutes = Math.floor(time / 60);
-    let seconds = time % 60;
+            document.getElementById("countdown").innerHTML = "Time is up!"
+        }
+    }, 1000);
 
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-
-    countdownEl.innerHTML = `${minutes}:${seconds}`;
-    time--;
+    console.log(countdown)
 }

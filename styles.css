@@ -36,7 +36,7 @@ body {
     font-size: 20px;
 }
 
-.button {
+.button, #gameStart{
     border: 0;
     line-height: 2.5;
     padding: 0 20px;
@@ -58,3 +58,4 @@ body {
 .button:hover {
     background-color: rgba(255, 0, 0, 1);
 }
+
