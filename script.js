@@ -29,13 +29,14 @@ var questions = [
 ]
 
 // declare vars to keep track of the quiz
-     // var indexOfQues. set to 0
-     // var time = questions.length * 15
-     // var timer;
+     var indexOfQuestions = 0;
+     var time = questions.length * 20;
+     var timer;
 
 
 // declare vars to grab the elements from html file
-    // var quesElement = document.
+    var quesEl = document.getElementById("Question");
+    var ansEl = document.getElementById("Answers");
 
 // function to start the quiz ---> line 30-35
 // function to get questions
