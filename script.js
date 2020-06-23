@@ -31,12 +31,16 @@ var questions = [
 // declare vars to keep track of the quiz
      var indexOfQuestions = 0;
      var time = questions.length * 20;
-     var timer;
+     var timer = document.getElementById("Timer");
 
 
 // declare vars to grab the elements from html file
     var quesEl = document.getElementById("Question");
     var ansEl = document.getElementById("Answers");
+    var userChoice = ;
+    var output = [];
+    var answers;
+
 
 // function to start the quiz ---> line 30-35
 // function to get questions
@@ -44,14 +48,22 @@ var questions = [
 // function to deduct time if answer is wrong 
 // function for the quiz to end
 // function to update time
+    function timeFunction() {
+        time--;
+        if (userChoice !== answers) {
+            time -= 5;
+        }
+        if ()
+    }
 // function to save score and initials
 
-// declar var to start screen
-// doc.elbyID
-// startScreen.setAttribute("class", "hide")
-// quesEl.removeAttribute("class")
-// timer = setInterval(functionForTime, 1000)
-// .textContent = function(getQuestions)
+// declare var to start screen
+    var startScreen;
+doc.elbyID
+startScreen.setAttribute("class", "hide")
+quesEl.removeAttribute("class")
+timer = setInterval(functionForTime, 1000)
+.textContent = function(getQuestions)
      // appends html 
 
 // getquestion function
@@ -66,12 +78,9 @@ var questions = [
 
     var userChoice = //html btns
 
-    if (userChoice !== answers) {
-        time -= 5;
-    }
-    else 
 
 // time--
 //.textContent to show it on page 
 // check if time ran out
+    if 
 // ends quiz
