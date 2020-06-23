@@ -2,13 +2,30 @@
 
 var questions = [
     {
-        ques: "test question",
-        choices: ["1", "2", "3", "4"],
-        answer: "2"
+        question: "JavaScript was created within which company?",
+        choices: ["Microsoft", "Netscape", "IBM", "Apple"],
+        answer: "Netscape"
     },
     {
-
-    }
+        question: "What percentage of websites use JavaScript?",
+        choices: ["100%", "97%", "92%", "89%"],
+        answer: "92%"
+    },
+    {
+        question: "In which HTML element can we store JavaScript code?",
+        choices: ["<js>", "<script>", "<javascript>", "N/A"],
+        answer: "<script>"
+    },
+    {
+        question: "What is the proper file extension for external JavaScript files?",
+        choices: [".js", ".script", ".jvs", ".mocha"],
+        answer: ".js"
+    },
+    {
+        question: "Which of the following properly declares a variable?",
+        choices: ["I declare the following a variable: kingArthurVar", "Issa variable = 21SavageVar", "variable = issaVar", "var = camelCase"],
+        answer: "var = camelCase"
+    },
 ]
 
 // declare vars to keep track of the quiz
