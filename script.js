@@ -33,29 +33,22 @@ var questions = [
 
 // declare vars to keep track of the quiz
      
-    var indexOfQuestions = 0;
-    var time = questions.length * 20;
-    var timer = document.getElementById("Timer");
-    var startBtn = document.getElementById("start-btn");
-    console.log(startBtn);
+var indexOfQuestions = 0;
+var time = questions.length * 20;
 
 // declare vars to grab the elements from html file
     
-    var quesEl = document.getElementById("Question");
-    var ansEl = document.getElementById("Answers");
-    var ans1 = document.getElementById("ans1");
-    var ans2 = document.getElementById("ans2");
-    var ans3 = document.getElementById("ans3");
-    var ans4 = document.getElementById("ans4");
-    var answers = [];
-    var hidden = document.getElementsByClassName("hide");
-    var quizTimer;
-
-// function to cycle through questions
-    
-    // userChoice.addEventListener("click", function () {
-    //     for (var i = 0; i < questions.length; i++) 
-
+var timer = document.getElementById("Timer");
+var startBtn = document.getElementById("start-btn");
+var quesEl = document.getElementById("Question");
+var ansEl = document.getElementById("Answers");
+var ans1 = document.getElementById("ans1");
+var ans2 = document.getElementById("ans2");
+var ans3 = document.getElementById("ans3");
+var ans4 = document.getElementById("ans4");
+var answers = [];
+var hidden = document.getElementsByClassName("hide");
+var quizTimer;
 
 // function to start the quiz 
 function countdown() {
@@ -74,7 +67,7 @@ function getQuestions() {
         var choiceBtn = document.createElement("button");
         choiceBtn.setAttribute("class", "choice");
         choiceBtn.setAttribute("value", choice);
-        choiceBtn.textContent = index + 1 + ") " + choice;
+        choiceBtn.textContent = choice;
         choiceBtn.onclick = choiceClick; 
         ansEl.appendChild(choiceBtn);
     });
@@ -98,7 +91,6 @@ function choiceClick() {
 };
 
 function startQuiz() {
-    console.log("test");
     countdown()
     for (var i = 0; i < hidden.length; i += 1) {
         hidden[i].style.display = 'block';
@@ -107,15 +99,18 @@ function startQuiz() {
 };
 
 startBtn.addEventListener("click", startQuiz);
+startBtn.addEventListener("click", hideStart);
 
-// function for the quiz to end (out of time or questions)
+function endQuiz () {
+    clearInterval(quizTimer);
+    document.getElementById("Card").innerHTML = "";
+    var finalScore = document.createElement("p")
+    finalScore.textContent = "Congrats!...your score is" + time;
+    startBtn.appendChild(finalScore);
+};
 
-    function endQuiz () {
-        clearInterval(quizTimer);
-        document.getElementById("Card").innerHTML = "";
-        var finalScore = document.createElement("p")
-        finalScore.textContent = "Congrats!...your score is" + time;
-        startBtn.appendChild(finalScore);
-    };
+function hideStart() {
+    startBtn.style.display = 'none';
+}
 
 // add div for Response, avoid alerts
