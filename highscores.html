@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="scores"> </div>
+
+    <script>
+    const readLocalStorage = () => (JSON.parse(localStorage.getItem("scores")) || [])
+    var scores = readLocalStorage();
+    scores.forEach(item => {
+        var initials = document.createElement('div');
+        initials.innerHTML = `
+            <h1>
+                Score ${item.score}
+                Initials ${item.initials}
+            </h1>
+        `
+        document.getElementById('scores').appendChild(initials)
+    });
+
+// read highscore
+// s from local storage
+// parse from string to array
+// loop/write to page
+</script>
+</body>
+</html>

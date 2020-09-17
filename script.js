@@ -40,6 +40,7 @@ var time = questions.length * 20;
     
 var timer = document.getElementById("Timer");
 var startBtn = document.getElementById("start-btn");
+var Card = document.getElementById("Card");
 var quesEl = document.getElementById("Question");
 var ansEl = document.getElementById("Answers");
 var ans1 = document.getElementById("ans1");
@@ -75,11 +76,9 @@ function getQuestions() {
 
 function choiceClick() {
     if (this.value !== questions[indexOfQuestions].answer) {
-        alert("FAILURE");
         time -= 5;
     }
     else {
-        alert("CORRECT");
     }
     indexOfQuestions++;
     if (indexOfQuestions === questions.length) {
@@ -103,11 +102,32 @@ startBtn.addEventListener("click", hideStart);
 
 function endQuiz () {
     clearInterval(quizTimer);
-    document.getElementById("Card").innerHTML = "";
+    Card.innerHTML = "";
     var finalScore = document.createElement("p")
-    finalScore.textContent = "Congrats!...your score is" + time;
-    startBtn.appendChild(finalScore);
+    finalScore.textContent = "Congrats!...your score is " + time;
+    Card.appendChild(finalScore);
+    var form = document.createElement("form")
+    var initials = document.createElement("input");
+    form.appendChild(initials);
+    Card.appendChild(form);
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        var initialsAndScore = {
+        initials: initials.value,
+        score: time,
+    }
+    writeLocalStorage(initialsAndScore);
+    window.open('./highscores.html'); 
+    })
 };
+
+const readLocalStorage = () => (JSON.parse(localStorage.getItem("scores")) || [])
+
+function writeLocalStorage(item) {
+    var highScores = readLocalStorage();
+    highScores.push(item);
+    localStorage.setItem('scores', JSON.stringify(highScores)); 
+}
 
 function hideStart() {
     startBtn.style.display = 'none';
