@@ -1,5 +1,3 @@
-// write questions (array)
-
 var questions = [
     {
         question: "JavaScript was created within which company?",
@@ -31,13 +29,8 @@ var questions = [
     },
 ];
 
-// declare vars to keep track of the quiz
-     
 var indexOfQuestions = 0;
-var time = questions.length * 20;
-
-// declare vars to grab the elements from html file
-    
+var time = 100;
 var timer = document.getElementById("Timer");
 var startBtn = document.getElementById("start-btn");
 var Card = document.getElementById("Card");
@@ -55,8 +48,10 @@ var quizTimer;
 function countdown() {
     quizTimer = setInterval(function () {
         time--;
-        console.log(time);
     }, 1000)
+    clock = document.createElement("p");
+    clock.textContent = quizTimer;
+    Card.appendChild(clock); 
 };
 
 function getQuestions() {
@@ -66,11 +61,13 @@ function getQuestions() {
     
     getQuestion.choices.forEach(function(choice, index) {
         var choiceBtn = document.createElement("button");
+        var lineBreak = document.createElement("br");
         choiceBtn.setAttribute("class", "choice");
         choiceBtn.setAttribute("value", choice);
         choiceBtn.textContent = choice;
         choiceBtn.onclick = choiceClick; 
         ansEl.appendChild(choiceBtn);
+        ansEl.appendChild(lineBreak);
     });
 };
 
