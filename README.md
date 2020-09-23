@@ -4,6 +4,7 @@ This quiz is built to test the user's understanding of JavaScript. This first sc
 
 <img width="1280" alt="Screen Shot 2020-09-23 at 12 06 51 AM" src="https://user-images.githubusercontent.com/48275526/93965731-e3c7c880-fd30-11ea-88ca-679b4502ffa4.png">
 
+When the start button is clicked, it disapears and the quiz begins. 
 Notice in the top left corner, a timer begins at 100 seconds. This counts down in real time, with the exception of a 5 second penalty per wrong answer.
 
 <img width="1280" alt="Screen Shot 2020-09-23 at 12 06 58 AM" src="https://user-images.githubusercontent.com/48275526/93965735-e62a2280-fd30-11ea-9902-5704f3331de1.png">
