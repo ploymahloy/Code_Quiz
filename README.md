@@ -13,6 +13,6 @@ Upon completing the quiz, the user is prompted to enter their initials...
 
 <img width="1280" alt="Screen Shot 2020-09-23 at 12 07 19 AM" src="https://user-images.githubusercontent.com/48275526/93965742-e88c7c80-fd30-11ea-8c97-0640112376e5.png">
 
-...and aer subsuquently directed to a new page showing the machine's high scores.
+...and are subsuquently directed to a new page showing the machine's high scores.
 
 <img width="1280" alt="Screen Shot 2020-09-23 at 12 07 28 AM" src="https://user-images.githubusercontent.com/48275526/93965747-ea564000-fd30-11ea-91e4-47eb437a438a.png">
