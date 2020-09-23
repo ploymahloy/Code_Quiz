@@ -1,4 +1,4 @@
-# Code_Quiz]
+# Code Quiz
 
 This quiz is built to test the user's understanding of JavaScript. This first screenshot shows the load screen.
 
